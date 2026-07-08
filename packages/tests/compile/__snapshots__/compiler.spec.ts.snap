@@ -1,0 +1,79 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`fixtures > external-options.vue 1`] = `
+"import { applyPropOptions } from "vue-macro-with-options/runtime";
+import { createElementBlock, defineComponent, openBlock } from "vue";
+//#endregion
+//#region compile/fixtures/external-options.vue
+var external_options_default = /* @__PURE__ */ defineComponent({
+	__name: "external-options",
+	props: applyPropOptions({ foo: {
+		type: String,
+		required: true
+	} }, { foo: {
+		default: "bar",
+		validator: (value) => value.length > 0
+	} }),
+	setup(__props) {
+		return (_ctx, _cache) => {
+			return openBlock(), createElementBlock("div");
+		};
+	}
+});
+//#endregion
+export { external_options_default as default };
+"
+`;
+
+exports[`fixtures > inline-options.vue 1`] = `
+"import { applyPropOptions } from "vue-macro-with-options/runtime";
+import { createElementBlock, defineComponent, openBlock } from "vue";
+//#endregion
+//#region compile/fixtures/inline-options.vue
+var inline_options_default = /* @__PURE__ */ defineComponent({
+	__name: "inline-options",
+	props: applyPropOptions({ foo: {
+		type: String,
+		required: true
+	} }, { foo: {
+		default: "bar",
+		validator: (value) => value.length > 0
+	} }),
+	setup(__props) {
+		return (_ctx, _cache) => {
+			return openBlock(), createElementBlock("div");
+		};
+	}
+});
+//#endregion
+export { inline_options_default as default };
+"
+`;
+
+exports[`fixtures > merges props when compiler generates a named component 1`] = `
+"import { applyPropOptions as __applyPropOptions } from 'vue-macro-with-options/runtime'
+import { defineComponent as _defineComponent } from 'vue'
+
+const _sfc_main = /*@__PURE__*/_defineComponent({
+  __name: 'inline-options',
+  props: __applyPropOptions({
+    foo: { type: String, required: true }
+  }, {foo: {
+    default: 'bar',
+    validator: (value: string) => value.length > 0
+}}),
+  setup(__props: any, { expose: __expose }) {
+  __expose();
+
+                    
+                   
+                                                  
+   
+
+const __returned__ = {  }
+Object.defineProperty(__returned__, '__isScriptSetup', { enumerable: false, value: true })
+return __returned__
+}
+
+})"
+`;

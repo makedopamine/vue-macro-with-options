@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "packageManager": "pnpm@12.18.0",
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm --filter playground dev",
+    "build": "pnpm --filter vue-macro-with-options build",
+    "test": "pnpm --filter tests test",
+    "typecheck": "vue-tsc"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.0",
+    "typescript": "^6.0.3",
+    "vue": "^3.5.39",
+    "vue-tsc": "^3.3.10"
+  }
+}

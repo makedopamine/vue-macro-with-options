@@ -1,0 +1,40 @@
+{
+  "name": "vue-macro-with-options",
+  "version": "0.0.1-alpha",
+  "description": "Add runtime props options (default, validator, ...) to type-based defineProps in Vue SFCs.",
+  "keywords": [
+    "vue",
+    "vite",
+    "macro",
+    "sfc",
+    "defineProps",
+    "props"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "node scripts/build.ts --experimental-strip-types",
+    "prepublishOnly": "pnpm build"
+  },
+  "devDependencies": {
+    "rolldown": "^1.1.4",
+    "rolldown-plugin-dts": "^0.28.2"
+  },
+  "dependencies": {
+    "@jridgewell/sourcemap-codec": "^1.5.5",
+    "oxc-parser": "^0.139.0"
+  },
+  "peerDependencies": {
+    "vue": "^3.5.39"
+  },
+  "publishConfig": {
+    "directory": "dist"
+  }
+}
