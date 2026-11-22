@@ -3,21 +3,6 @@ import * as _compiler from 'vue/compiler-sfc'
 import { decode, encode, } from '@jridgewell/sourcemap-codec'
 
 import type { CallExpression, Expression, MemberExpression, Program } from 'oxc-parser'
-import { SourceMap } from 'module'
-
-function getPropertyName(property: any) {
-    if (property.key?.type === 'Identifier') {
-        return property.key.name
-    }
-    if (property.key?.type === 'StringLiteral') {
-        return property.key.value
-    }
-    return null
-}
-
-function preserveLineBreaksAsSpaces(code: string) {
-    return code.replace(/[^\r\n]/g, ' ')
-}
 
 const _compileScript = _compiler.compileScript
 const compileScript: typeof _compiler.compileScript = (descriptor, compilerOptions) => {
@@ -185,6 +170,20 @@ const compileScript: typeof _compiler.compileScript = (descriptor, compilerOptio
     }
     result.content = generatedContent
     return result
+}
+
+function getPropertyName(property: any) {
+    if (property.key?.type === 'Identifier') {
+        return property.key.name
+    }
+    if (property.key?.type === 'StringLiteral') {
+        return property.key.value
+    }
+    return null
+}
+
+function preserveLineBreaksAsSpaces(code: string) {
+    return code.replace(/[^\r\n]/g, ' ')
 }
 
 function getLineStarts(code: string) {
